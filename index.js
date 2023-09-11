@@ -9,9 +9,15 @@ const main = async () => {
     })
 
     const page = await browser.newPage()
-    await page.goto('https://www.netshoes.com.br/tenis-adidas-runfalcon-30-masculino-preto+branco-FB8-4501-026')
-    const content = await page.content()
-    console.log(content);
+    await page.goto('https://www.netshoes.com.br/lst/mi-mais-vendidos?mi=hm_sc_f1_mais_vendidos_070923-mas-00&psn=Banner_Full_1')
+    const clickElement = await page.waitForXPath('/html/body/div[1]/div/div[2]/div[2]/div[4]')
+
+    await clickElement.click()
+
+    await new Promise(r => setTimeout(r, 2000))
+
+
+
 }
 
 main()
