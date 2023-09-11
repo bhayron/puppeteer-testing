@@ -13,11 +13,7 @@ const main = async () => {
     const clickElement = await page.waitForXPath('/html/body/div[1]/div/div[2]/div[2]/div[4]')
 
     await clickElement.click()
-
     await new Promise(r => setTimeout(r, 2000))
-
-
-
 }
 
 main()
